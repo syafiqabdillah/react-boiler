@@ -1,1 +1,1 @@
-# React Boiler Template by Syafiq
+# VueJS Template by Syafiq Abdillah Umarghanis
