@@ -5,7 +5,7 @@
         <b-card overlay img-src="img/relawan1.jpg">
           <b-row align-h="center" align-v="end">
             <div style="bottom:20px;position:absolute;">
-              <b-button
+              <!-- <b-button
                 to="/donasi"
                 style="background-color:#FFA63D;color:black;border:0px;"
                 size="lg"
@@ -18,7 +18,7 @@
                 size="sm"
                 id="button-donasi"
                 v-if="isMobile"
-              >DONASI SEKARANG</b-button>
+              >DONASI SEKARANG</b-button> -->
             </div>
           </b-row>
         </b-card>

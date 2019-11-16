@@ -23,11 +23,7 @@
                 required
               ></b-form-input>
             </b-form-group>
-            <b-form-group
-              id="input-group-bergabung-2"
-              label="No HP"
-              label-for="input-bergabung-2"
-            >
+            <b-form-group id="input-group-bergabung-2" label="No HP" label-for="input-bergabung-2">
               <b-form-input
                 id="input-bergabung-2"
                 v-model="formPendaftaran.no_hp"
@@ -76,8 +72,7 @@
     <b-modal ref="loading" hide-header hide-footer>
       <div align="center">
         <b-spinner label="Spinning"></b-spinner>
-        <br>
-        Loading...
+        <br />Loading...
       </div>
     </b-modal>
   </div>
@@ -103,23 +98,26 @@ export default {
     onSubmitPendaftaran(e) {
       e.preventDefault();
       this.$refs["loading"].show();
-      axios.post(host+'/bergabung',{
-        body:this.formPendaftaran
-      })
-      .then(res=>{
-        this.$refs["loading"].hide();
-        alert("Lamaran bergabung berhasil dibuat. Tunggu admin kami menghubungi Anda");
-        window.location.reload();
-      })
-      .catch(e=>{
-        this.$refs["loading"].hide();
-        alert(e);
-        window.location.reload();
-      })
+      axios
+        .post(host + "/bergabung", {
+          body: this.formPendaftaran
+        })
+        .then(res => {
+          this.$refs["loading"].hide();
+          alert(
+            "Lamaran bergabung berhasil dibuat. Tunggu admin kami menghubungi Anda"
+          );
+          window.location.reload();
+        })
+        .catch(e => {
+          this.$refs["loading"].hide();
+          alert(e);
+          window.location.reload();
+        });
     }
   },
   created() {
-    if(sessionStorage.getItem("nama") !== null){
+    if (sessionStorage.getItem("nama") !== null) {
       this.formPendaftaran.nama = sessionStorage.getItem("nama");
     }
     axios
